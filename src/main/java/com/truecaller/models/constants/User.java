@@ -17,6 +17,6 @@ import lombok.Setter;
         private String password;
 
         @Enumerated( EnumType.STRING)
-        private String userType;
+        private UserType userType;
 
     }
