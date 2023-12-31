@@ -19,10 +19,10 @@
 - registerUser()
 
 
--
-
 **Contact**
 -Phone number
+- c0ntact type
+
 - addContact()
 - blockContact()
 - unblockContact()
@@ -31,9 +31,9 @@
 - blacklistcontact()
 
 **Contacttype**
--NormalUser
--BusinessUser
--blackListedUser
+-NormalContact
+-BusinessContact
+-blackListedContact
 
 **User type**
 Normal user
