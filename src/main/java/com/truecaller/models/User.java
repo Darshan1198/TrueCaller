@@ -1,5 +1,6 @@
-package com.truecaller.models.constants;
+package com.truecaller.models;
 
+import com.truecaller.models.constants.UserType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -5,6 +5,5 @@ public enum ContactTypes {
     BUISNESS,
     BLOCKLISTED,
     BLOCKED,
-
     SPAM
 }

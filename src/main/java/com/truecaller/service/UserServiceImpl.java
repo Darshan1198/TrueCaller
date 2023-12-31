@@ -1,11 +1,16 @@
-package com.truecaller.Services;
+package com.truecaller.service;
 
 
-import com.truecaller.Repository.UserRepository;
-import com.truecaller.models.constants.User;
+import com.truecaller.exception.ContactNotFoundException;
+import com.truecaller.exception.UserNotFoundException;
+import com.truecaller.models.Contact;
+import com.truecaller.repository.UserRepository;
+import com.truecaller.models.User;
 import com.truecaller.models.constants.UserType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements userService {
@@ -18,7 +23,7 @@ public class UserServiceImpl implements userService {
     }
 
     @Override
-    public User registerUser(String userName, String userPhoneNumber, String userEmail, UserType userType, String password) {
+    public String registerUser(String userName, String userPhoneNumber, String userEmail, UserType userType, String password) {
         // Check if the user with the given username or email already exists
 //        if (userRepository.existsByUsernameOrUserEmail(userName, userEmail)) {
 //            throw new IllegalArgumentException("Username or email already exists");
@@ -35,6 +40,15 @@ public class UserServiceImpl implements userService {
         user.setPassword(passwordEncoder.encode(password)); // Encrypt the password before storing
 
         // Save the user to the database
-        return userRepository.save(user);
+        userRepository.save(user);
+        String  message = "User registraton  successfull";
+        return message;
+    }
+    public String identifyCaller(String  phoneNumber){
+        Optional<User> optionalUser  = userRepository.findByPhoneNumber(phoneNumber);
+        if(optionalUser.isEmpty()){
+            throw  new UserNotFoundException("User doesn't exists");
+        }
+        return  optionalUser.get().getUsername();
     }
 }

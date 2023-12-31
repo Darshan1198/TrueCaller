@@ -1,6 +1,6 @@
-package com.truecaller.Services;
+package com.truecaller.service;
 
-import com.truecaller.models.constants.Contact;
+import com.truecaller.models.Contact;
 import com.truecaller.models.constants.ContactTypes;
 public interface ContactService {
 
@@ -8,16 +8,16 @@ public interface ContactService {
         Contact addContact(String phoneNumber, ContactTypes contactType);
 
         // Block a contact
-        void blockContact(Long contactId);
+        void blockContact(Long userId,String   phoneNumber);
 
         // Unblock a contact
-        void unblockContact(Long contactId);
+        void unblockContact(Long userid, String PhoneNumber);
 
         // Report a contact as spam
         void reportSpam(Long contactId);
 
         // Identify a caller
-        void identifyCaller(Long contactId, String callerName);
+
 
         // Add a contact to the blacklist
         void blackListContact(Long contactId);
