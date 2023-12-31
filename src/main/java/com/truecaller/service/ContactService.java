@@ -20,5 +20,5 @@ public interface ContactService {
 
 
         // Add a contact to the blacklist
-        void blackListContact(Long contactId);
+        void blackListContact(Long userId , String poneNumber);
     }

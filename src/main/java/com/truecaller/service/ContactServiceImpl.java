@@ -30,6 +30,7 @@ public class ContactServiceImpl implements ContactService {
         return contactRepository.save(newContact);
     }
 
+    @Override
     public void blockContact(Long userId, String phonenumber) {
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isEmpty()) {
@@ -43,6 +44,7 @@ public class ContactServiceImpl implements ContactService {
         userRepository.save(userOptional.get());  //  saving in the  user  repository
     }
 
+    @Override
     public void unblockContact(Long userId, String phonenumber) {
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isEmpty()) {
@@ -74,6 +76,8 @@ public class ContactServiceImpl implements ContactService {
         contactRepository.save(updatedSpamConunt);
     }
 
+
+    @Override
     public void blackListContact(Long userId , String poneNumber) {
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isEmpty()) {
