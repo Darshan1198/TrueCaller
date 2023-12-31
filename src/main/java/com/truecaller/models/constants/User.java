@@ -14,6 +14,7 @@ import lombok.Setter;
         private String username;
         private String phoneNumber;
         private String userEmail;
+        private String password;
 
         @Enumerated( EnumType.STRING)
         private String userType;
