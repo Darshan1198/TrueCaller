@@ -15,25 +15,27 @@
   -username
   -phonenumber
   -userEmail
+-List<contact> blockedcontacts
   -userType
 - registerUser()
 
 
 **Contact**
--Phone number
+- Phone number
 - c0ntact type
-
+- spamCount
 - addContact()
 - blockContact()
 - unblockContact()
--reportSpam()
+- reportSpam()
 - identifyCaller()
 - blacklistcontact()
 
 **Contacttype**
--NormalContact
--BusinessContact
--blackListedContact
+-Normal
+- Blocked 
+-Business
+-blackListed
 
 **User type**
 Normal user
