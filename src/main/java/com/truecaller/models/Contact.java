@@ -13,7 +13,7 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String PhoneNumber;
+    private String phoneNumber;
 
     private int SpamCount;
 

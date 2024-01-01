@@ -9,9 +9,11 @@ import com.truecaller.repository.UserRepository;
 import com.truecaller.models.Contact;
 import com.truecaller.models.constants.ContactTypes;
 import com.truecaller.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ContactServiceImpl implements ContactService {
 
     private final ContactRepository contactRepository;

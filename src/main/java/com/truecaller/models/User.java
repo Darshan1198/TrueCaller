@@ -14,9 +14,9 @@ import java.util.List;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private String username;
+        private String name;
         private String phoneNumber;
-        private String userEmail;
+        private String email;
         private String password;
 
         @Enumerated( EnumType.STRING)
